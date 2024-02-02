@@ -151,6 +151,19 @@ gui.get_tab("GUI_TAB_NETWORK"):add_button("Mini-game instant complete", function
                 locals.set_int(minigamelocaltable[i].script_name, minigamelocaltable[i].minigame_local, minigame_tmp_v)
             end
         end
+        if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat(minigamelocaltable[i].script_name)) ~= 0 then
+            minigame_tmp_v = locals.get_int(minigamelocaltable[i].script_name, minigamelocaltable[i].minigame_local) --3095 --  --Biolab 条形上下浮动对准中间 的小游戏 --"Hack_Success", "DLC_HEIST_BIOLAB_PREP_HACKING_SOUNDS"
+            if (minigame_tmp_v & (1 << 28)) == 0 then
+                minigame_tmp_v = minigame_tmp_v ~ (1 << 28)
+                locals.set_int(minigamelocaltable[i].script_name, minigamelocaltable[i].minigame_local, minigame_tmp_v)
+            end
+        end
+    end
+
+    if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_mission_controller")) ~= 0 then --patch for WINIP
+        locals.set_int("fm_mission_controller", 140 , 0)
+        locals.set_int("fm_mission_controller", 141 , 0)
+        locals.set_int("fm_mission_controller", 156 , 7)
     end
 
     minigame_tmp_v2 = globals.get_int(2737317)
