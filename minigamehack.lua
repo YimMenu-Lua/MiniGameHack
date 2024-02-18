@@ -9,7 +9,15 @@ gui.get_tab("GUI_TAB_NETWORK"):add_button("Mini-game instant complete", function
         locals.set_int("fm_mission_controller_2020", 29118, 6) --3095 --佩里科排水口格栅切割
 
         locals.set_float("fm_mission_controller_2020", 30357 + 3, 100) --3095 佩里科等离子切割
-        
+
+        if locals.get_int("fm_mission_controller_2020", 30332) == 3 then --佩里科密码箱 --Input_Code_Enter_Correct
+            locals.set_int("fm_mission_controller_2020", 30333, 2) --3095 --已输入三组密码
+            locals.set_float("fm_mission_controller_2020", 30333 + 1 + 1, locals.get_int("fm_mission_controller_2020", 30333 + 1 + 1 + 1)) --3095 --使已输入密码与目标相同
+            locals.set_float("fm_mission_controller_2020", 30333 + 1 + 1 + 2, locals.get_int("fm_mission_controller_2020", 30333 + 1 + 1 + 1 + 2)) --3095 --使已输入密码与目标相同
+            locals.set_float("fm_mission_controller_2020", 30333 + 1 + 1 + 4, locals.get_int("fm_mission_controller_2020", 30333 + 1 + 1 + 1 + 4)) --3095 --使已输入密码与目标相同
+            PAD.SET_CONTROL_VALUE_NEXT_FRAME(2, 237, 1.0) --确认密码
+        end
+
         locals.set_float("fm_mission_controller", 10067 + 11, 1) --3095 全福银行钻孔
     
         local_H4_hack_v = locals.get_int("fm_mission_controller_2020", local_H4_hack) --佩里科finger clone
@@ -178,6 +186,12 @@ gui.get_tab("GUI_TAB_NETWORK"):add_button("Mini-game instant complete", function
     end
     globals.set_int(2737317, minigame_tmp_v2)
 
+    if locals.get_int("fm_content_stash_house", 117 + 15) == 3 then --藏匿屋密码箱 --Input_Code_Enter_Correct SH_HT_MINIG_C f6310->f6299->f6362
+        locals.set_float("fm_content_stash_house", 117 + 22 + 1, locals.get_int("fm_content_stash_house", 117 + 22 + 1 + 1)) --3095 --使已输入密码与目标相同
+        locals.set_float("fm_content_stash_house", 117 + 22 + 1 + 2, locals.get_int("fm_content_stash_house", 117 + 22 + 1 + 1 + 2)) --3095 --使已输入密码与目标相同
+        locals.set_float("fm_content_stash_house", 117 + 22 + 1 + 4, locals.get_int("fm_content_stash_house", 117 + 22 + 1 + 1 + 4)) --3095 --使已输入密码与目标相同
+        gui.show_message("stash house detected","Continue pressing until success")
+    end
 end)
 else
     gui.get_tab("GUI_TAB_NETWORK"):add_text("Mini-game hack lua is outdated")
