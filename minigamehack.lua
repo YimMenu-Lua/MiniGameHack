@@ -1,5 +1,5 @@
 gtaoversion = memory.scan_pattern("8B C3 33 D2 C6 44 24 20"):add(0x24):rip()
-if gtaoversion:get_string() == "3095" then
+if gtaoversion:get_string() == "3179" then
 gui.get_tab("GUI_TAB_NETWORK"):add_button("Mini-game instant complete", function()
 
     local_H4_hack = 24333 --3095    --func_5790(&Local_24333, &(Local_24324[func_381(bParam1, 3) /*2*/]), 0, joaat("heist"), Global_786547.f_1);
@@ -17,8 +17,6 @@ gui.get_tab("GUI_TAB_NETWORK"):add_button("Mini-game instant complete", function
             locals.set_float("fm_mission_controller_2020", 30333 + 1 + 1 + 4, locals.get_int("fm_mission_controller_2020", 30333 + 1 + 1 + 1 + 4)) --3095 --使已输入密码与目标相同
             PAD.SET_CONTROL_VALUE_NEXT_FRAME(2, 237, 1.0) --确认密码
         end
-
-        locals.set_float("fm_mission_controller", 10067 + 11, 1) --3095 全福银行钻孔
     
         local_H4_hack_v = locals.get_int("fm_mission_controller_2020", local_H4_hack) --佩里科finger clone
         if (local_H4_hack_v & (1 << 0)) == 0 then
@@ -26,7 +24,11 @@ gui.get_tab("GUI_TAB_NETWORK"):add_button("Mini-game instant complete", function
             locals.set_int("fm_mission_controller_2020", local_H4_hack, local_H4_hack_v)
         end
     end
-    
+            
+    if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_mission_controller")) ~= 0 then --自动钻孔
+        locals.set_float("fm_mission_controller", 10067 + 11, 1) --3095 全福银行钻孔
+        locals.set_int("fm_mission_controller", 10107 + 2, 8) --3095 赌场金库门钻孔 DLC_HEIST3\HEIST_FINALE_LASER_DRILL case 8
+    end
     --所有赌场指纹和键盘门禁
     local_H3_hack_1 = 52985 --3095    --func_14102(&Local_52985, &(Local_52920[Local_31603[bLocal_3229 /*292*/].f_27 /*2*/]), 0, joaat("heist"), Global_786547.f_1);
     local_H3_hack_2 = 54047 --3095    --func_14104(&Local_54047, &(Local_53982[Local_31603[bLocal_3229 /*292*/].f_27 /*2*/]), 0, joaat("heist"), Global_786547.f_1);
