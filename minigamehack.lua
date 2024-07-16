@@ -60,6 +60,13 @@ gui.get_tab("GUI_TAB_NETWORK"):add_button("Mini-game instant complete", function
         end
     end
 
+    if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_mission_controller")) ~= 0 then
+        locals.set_int("fm_mission_controller", 1545, 2)  --末日一-服务器群组(Heist2-Mission1-Prep3:SERVER FARM)  GRAPHICS::DRAW_SPRITE("MPHotwire", "failed"
+    end
+    if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_mission_controller_2020")) ~= 0 then
+        locals.set_int("fm_mission_controller_2020", 1254, 2)  --保金办公室任务 (Bottom Dollar Bail Office Mission)  GRAPHICS::DRAW_SPRITE("MPHotwire", "failed"
+    end
+
     --所有voltlab
         --[[
         if (iLocal_765 == iLocal_764)
