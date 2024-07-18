@@ -1,20 +1,20 @@
 gtaoversion = memory.scan_pattern("8B C3 33 D2 C6 44 24 20"):add(0x24):rip()
-if gtaoversion:get_string() == "3258" then
+if gtaoversion:get_string() == "3274" then
 gui.get_tab("GUI_TAB_NETWORK"):add_button("Mini-game instant complete", function()
 
-    local local_H4_hack = 24880 --3258    --func_6004(&Local_24880, &(Local_24871[func_389(bParam1, 3) /*2*/]), 0, joaat("heist"), Global_786547.f_1);
+    local local_H4_hack = 24880 --3274    --func_6004(&Local_24880, &(Local_24871[func_389(bParam1, 3) /*2*/]), 0, joaat("heist"), Global_786547.f_1);
 
     if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_mission_controller_2020")) ~= 0 then
 
-        locals.set_int("fm_mission_controller_2020", 29700, 6) --3258 --佩里科排水口格栅切割
+        locals.set_int("fm_mission_controller_2020", 29700, 6) --3274 --佩里科排水口格栅切割
 
-        locals.set_float("fm_mission_controller_2020", 30939 + 3, 100) --3258 佩里科等离子切割
+        locals.set_float("fm_mission_controller_2020", 30939 + 3, 100) --3274 佩里科等离子切割
 
         if locals.get_int("fm_mission_controller_2020", 30914) == 3 then --佩里科密码箱 --Input_Code_Enter_Correct
-            locals.set_int("fm_mission_controller_2020", 30915, 2) --3258 --已输入三组密码
-            locals.set_float("fm_mission_controller_2020", 30915 + 1 + 1, locals.get_int("fm_mission_controller_2020", 30915 + 1 + 1 + 1)) --3258 --使已输入密码与目标相同
-            locals.set_float("fm_mission_controller_2020", 30915 + 1 + 1 + 2, locals.get_int("fm_mission_controller_2020", 30915 + 1 + 1 + 1 + 2)) --3258 --使已输入密码与目标相同
-            locals.set_float("fm_mission_controller_2020", 30915 + 1 + 1 + 4, locals.get_int("fm_mission_controller_2020", 30915 + 1 + 1 + 1 + 4)) --3258 --使已输入密码与目标相同
+            locals.set_int("fm_mission_controller_2020", 30915, 2) --3274 --已输入三组密码
+            locals.set_float("fm_mission_controller_2020", 30915 + 1 + 1, locals.get_int("fm_mission_controller_2020", 30915 + 1 + 1 + 1)) --3274 --使已输入密码与目标相同
+            locals.set_float("fm_mission_controller_2020", 30915 + 1 + 1 + 2, locals.get_int("fm_mission_controller_2020", 30915 + 1 + 1 + 1 + 2)) --3274 --使已输入密码与目标相同
+            locals.set_float("fm_mission_controller_2020", 30915 + 1 + 1 + 4, locals.get_int("fm_mission_controller_2020", 30915 + 1 + 1 + 1 + 4)) --3274 --使已输入密码与目标相同
             PAD.SET_CONTROL_VALUE_NEXT_FRAME(2, 237, 1.0) --确认密码
         end
     
@@ -26,14 +26,14 @@ gui.get_tab("GUI_TAB_NETWORK"):add_button("Mini-game instant complete", function
     end
             
     if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_mission_controller")) ~= 0 then --自动钻孔
-        locals.set_float("fm_mission_controller", 10069 + 11, 1) --3258 全福银行钻孔
-        locals.set_int("fm_mission_controller", 10109 + 2, 8) --3258 赌场金库门钻孔 DLC_HEIST3\HEIST_FINALE_LASER_DRILL case 8
+        locals.set_float("fm_mission_controller", 10069 + 11, 1) --3274 全福银行钻孔
+        locals.set_int("fm_mission_controller", 10109 + 2, 8) --3274 赌场金库门钻孔 DLC_HEIST3\HEIST_FINALE_LASER_DRILL case 8
     end
     --所有赌场指纹和键盘门禁
-    local local_H3_hack_1 = 53019 --3258    --func_14102(&Local_52985, &(Local_52920[Local_31603[bLocal_3229 /*292*/].f_27 /*2*/]), 0, joaat("heist"), Global_786547.f_1);
-    local local_H3_hack_2 = 54085 --3258    --func_14104(&Local_54047, &(Local_53982[Local_31603[bLocal_3229 /*292*/].f_27 /*2*/]), 0, joaat("heist"), Global_786547.f_1);
-    local local_H3_hack_1_p = 2840 --3258    
-    local local_H3_hack_2_p = 3841 --3258    
+    local local_H3_hack_1 = 53019 --3274    --func_14102(&Local_52985, &(Local_52920[Local_31603[bLocal_3229 /*292*/].f_27 /*2*/]), 0, joaat("heist"), Global_786547.f_1);
+    local local_H3_hack_2 = 54085 --3274    --func_14104(&Local_54047, &(Local_53982[Local_31603[bLocal_3229 /*292*/].f_27 /*2*/]), 0, joaat("heist"), Global_786547.f_1);
+    local local_H3_hack_1_p = 2840 --3274    
+    local local_H3_hack_2_p = 3841 --3274    
 
     if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_mission_controller")) ~= 0 then --赌场指纹门禁
         local_H3_hack_1_v = locals.get_int("fm_mission_controller", local_H3_hack_1)
@@ -76,29 +76,29 @@ gui.get_tab("GUI_TAB_NETWORK"):add_button("Mini-game instant complete", function
     ]]
 
     if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_mission_controller_2020")) ~= 0 then --voltlab立即完成
-        locals.set_int("fm_mission_controller_2020", 1723, locals.get_int("fm_mission_controller_2020", 1724)) --3258 --voltlab实际值与目标值始终一致
-        locals.set_int("fm_mission_controller_2020", 1725, 3) --3258 已连接三条线
+        locals.set_int("fm_mission_controller_2020", 1723, locals.get_int("fm_mission_controller_2020", 1724)) --3274 --voltlab实际值与目标值始终一致
+        locals.set_int("fm_mission_controller_2020", 1725, 3) --3274 已连接三条线
     end
     if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_content_island_heist")) ~= 0 then
-        locals.set_int("fm_content_island_heist", 766, locals.get_int("fm_content_island_heist", 767)) --3258 --voltlab实际值与目标值始终一致
-        locals.set_int("fm_content_island_heist", 768, 3) --3258  已连接三条线
+        locals.set_int("fm_content_island_heist", 766, locals.get_int("fm_content_island_heist", 767)) --3274 --voltlab实际值与目标值始终一致
+        locals.set_int("fm_content_island_heist", 768, 3) --3274  已连接三条线
     end
     if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_content_vehrob_prep")) ~= 0 then
-        locals.set_int("fm_content_vehrob_prep", 547, locals.get_int("fm_content_vehrob_prep", 548)) --3258 --voltlab实际值与目标值始终一致
-        locals.set_int("fm_content_vehrob_prep", 549, 3) --3258  已连接三条线
+        locals.set_int("fm_content_vehrob_prep", 547, locals.get_int("fm_content_vehrob_prep", 548)) --3274 --voltlab实际值与目标值始终一致
+        locals.set_int("fm_content_vehrob_prep", 549, 3) --3274  已连接三条线
     end
     if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("am_mp_arc_cab_manager")) ~= 0 then
-        locals.set_int("am_mp_arc_cab_manager", 455, locals.get_int("am_mp_arc_cab_manager", 456)) --3258 --voltlab实际值与目标值始终一致
-        locals.set_int("am_mp_arc_cab_manager", 457, 3) --3258  已连接三条线
+        locals.set_int("am_mp_arc_cab_manager", 455, locals.get_int("am_mp_arc_cab_manager", 456)) --3274 --voltlab实际值与目标值始终一致
+        locals.set_int("am_mp_arc_cab_manager", 457, 3) --3274  已连接三条线
     end
 
 
     --所有收集数据包绕过防火墙破解
     if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_content_vehrob_casino_prize")) ~= 0 then
-        locals.set_int("fm_content_vehrob_casino_prize", 1045 + 135 , 3) --3258 case 3 Pass_Remote
+        locals.set_int("fm_content_vehrob_casino_prize", 1045 + 135 , 3) --3274 case 3 Pass_Remote
     end
     if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_mission_controller")) ~= 0 then --
-        locals.set_int("fm_mission_controller", 1271 + 135 , 3) --3258 case 3 Pass_Remote
+        locals.set_int("fm_mission_controller", 1271 + 135 , 3) --3274 case 3 Pass_Remote
     end
     if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_mission_controller_2020")) ~= 0 then
         locals.set_int("fm_mission_controller_2020", 980 + 135 , 3) --3095 case 3 Pass_Remote
@@ -148,28 +148,28 @@ gui.get_tab("GUI_TAB_NETWORK"):add_button("Mini-game instant complete", function
 
     for i = 1, 13 do
         if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat(minigamelocaltable[i].script_name)) ~= 0 then
-            minigame_tmp_v = locals.get_int(minigamelocaltable[i].script_name, minigamelocaltable[i].minigame_local) --3258 -- WINBRUTE 
+            minigame_tmp_v = locals.get_int(minigamelocaltable[i].script_name, minigamelocaltable[i].minigame_local) --3274 -- WINBRUTE 
             if (minigame_tmp_v & (1 << 9)) == 0 then
                 minigame_tmp_v = minigame_tmp_v ~ (1 << 9)
                 locals.set_int(minigamelocaltable[i].script_name, minigamelocaltable[i].minigame_local, minigame_tmp_v)
             end
         end
         if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat(minigamelocaltable[i].script_name)) ~= 0 then
-            minigame_tmp_v = locals.get_int(minigamelocaltable[i].script_name, minigamelocaltable[i].minigame_local) --3258 -- WINIP 
+            minigame_tmp_v = locals.get_int(minigamelocaltable[i].script_name, minigamelocaltable[i].minigame_local) --3274 -- WINIP 
             if (minigame_tmp_v & (1 << 18)) == 0 then
                 minigame_tmp_v = minigame_tmp_v ~ (1 << 18)
                 locals.set_int(minigamelocaltable[i].script_name, minigamelocaltable[i].minigame_local, minigame_tmp_v)
             end
         end
         if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat(minigamelocaltable[i].script_name)) ~= 0 then
-            minigame_tmp_v = locals.get_int(minigamelocaltable[i].script_name, minigamelocaltable[i].minigame_local) --3258 --  --Biolab 条形上下浮动对准中间 的小游戏 --"Hack_Success", "DLC_HEIST_BIOLAB_PREP_HACKING_SOUNDS"
+            minigame_tmp_v = locals.get_int(minigamelocaltable[i].script_name, minigamelocaltable[i].minigame_local) --3274 --  --Biolab 条形上下浮动对准中间 的小游戏 --"Hack_Success", "DLC_HEIST_BIOLAB_PREP_HACKING_SOUNDS"
             if (minigame_tmp_v & (1 << 26)) == 0 then
                 minigame_tmp_v = minigame_tmp_v ~ (1 << 26)
                 locals.set_int(minigamelocaltable[i].script_name, minigamelocaltable[i].minigame_local, minigame_tmp_v)
             end
         end
         if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat(minigamelocaltable[i].script_name)) ~= 0 then
-            minigame_tmp_v = locals.get_int(minigamelocaltable[i].script_name, minigamelocaltable[i].minigame_local) --3258 --  --Biolab 条形上下浮动对准中间 的小游戏 --"Hack_Success", "DLC_HEIST_BIOLAB_PREP_HACKING_SOUNDS"
+            minigame_tmp_v = locals.get_int(minigamelocaltable[i].script_name, minigamelocaltable[i].minigame_local) --3274 --  --Biolab 条形上下浮动对准中间 的小游戏 --"Hack_Success", "DLC_HEIST_BIOLAB_PREP_HACKING_SOUNDS"
             if (minigame_tmp_v & (1 << 28)) == 0 then
                 minigame_tmp_v = minigame_tmp_v ~ (1 << 28)
                 locals.set_int(minigamelocaltable[i].script_name, minigamelocaltable[i].minigame_local, minigame_tmp_v)
@@ -198,9 +198,9 @@ gui.get_tab("GUI_TAB_NETWORK"):add_button("Mini-game instant complete", function
 	local stash_house_code_local = 119
 
     if locals.get_int("fm_content_stash_house", stash_house_code_local + 15) == 3 then --藏匿屋密码箱 --Input_Code_Enter_Correct SH_HT_MINIG_C f6310->f6299->f6362
-        locals.set_float("fm_content_stash_house", stash_house_code_local + 22 + 1, locals.get_int("fm_content_stash_house", stash_house_code_local + 22 + 1 + 1)) --3258 --使已输入密码与目标相同
-        locals.set_float("fm_content_stash_house", stash_house_code_local + 22 + 1 + 2, locals.get_int("fm_content_stash_house", stash_house_code_local + 22 + 1 + 1 + 2)) --3258 --使已输入密码与目标相同
-        locals.set_float("fm_content_stash_house", stash_house_code_local + 22 + 1 + 4, locals.get_int("fm_content_stash_house", stash_house_code_local + 22 + 1 + 1 + 4)) --3258 --使已输入密码与目标相同
+        locals.set_float("fm_content_stash_house", stash_house_code_local + 22 + 1, locals.get_int("fm_content_stash_house", stash_house_code_local + 22 + 1 + 1)) --3274 --使已输入密码与目标相同
+        locals.set_float("fm_content_stash_house", stash_house_code_local + 22 + 1 + 2, locals.get_int("fm_content_stash_house", stash_house_code_local + 22 + 1 + 1 + 2)) --3274 --使已输入密码与目标相同
+        locals.set_float("fm_content_stash_house", stash_house_code_local + 22 + 1 + 4, locals.get_int("fm_content_stash_house", stash_house_code_local + 22 + 1 + 1 + 4)) --3274 --使已输入密码与目标相同
         gui.show_message("stash house detected","Continue pressing until success")
     end
 end)
