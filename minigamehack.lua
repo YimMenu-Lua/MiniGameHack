@@ -195,13 +195,8 @@ gui.get_tab("GUI_TAB_NETWORK"):add_button("Mini-game instant complete", function
     end
     globals.set_int(2737663, minigame_tmp_v2)
 	
-	local stash_house_code_local = 119
-
-    if locals.get_int("fm_content_stash_house", stash_house_code_local + 15) == 3 then --藏匿屋密码箱 --Input_Code_Enter_Correct SH_HT_MINIG_C f6310->f6299->f6362
-        locals.set_float("fm_content_stash_house", stash_house_code_local + 22 + 1, locals.get_int("fm_content_stash_house", stash_house_code_local + 22 + 1 + 1)) --3274 --使已输入密码与目标相同
-        locals.set_float("fm_content_stash_house", stash_house_code_local + 22 + 1 + 2, locals.get_int("fm_content_stash_house", stash_house_code_local + 22 + 1 + 1 + 2)) --3274 --使已输入密码与目标相同
-        locals.set_float("fm_content_stash_house", stash_house_code_local + 22 + 1 + 4, locals.get_int("fm_content_stash_house", stash_house_code_local + 22 + 1 + 1 + 4)) --3274 --使已输入密码与目标相同
-        gui.show_message("stash house detected","Continue pressing until success")
+    if SCRIPT.GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_content_stash_house")) ~= 0 then --藏匿屋密码箱
+        locals.set_int("fm_content_stash_house", 119 + 1 , 1)
     end
 end)
 else
