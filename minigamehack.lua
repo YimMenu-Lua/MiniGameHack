@@ -9,14 +9,14 @@ local function GetBuildNumber()
     return pBnum:get_string()
 end
 
-local TARGET_BUILD  <const> = "3407"
+local TARGET_BUILD <const>  = "3407"
 local CURRENT_BUILD <const> = GetBuildNumber()
 
-local local_H3_hack_1   = 53087 -- (1.70 b3407) -- func_14773(&Local_53087, &(Local_53022[Local_31656[bLocal_3261 /*293*/].f_27 /*2*/]), 0, joaat("heist"), Global_786547.f_1);
-local local_H3_hack_2   = 54153 -- (1.70 b3407) -- func_14775(&Local_54153, &(Local_54088[Local_31656[bLocal_3261 /*293*/].f_27 /*2*/]), 0, joaat("heist"), Global_786547.f_1);
-local local_H3_hack_1_p = 2861  -- (1.70 b3407) -- func_6778(&Local_2861, &(Local_1325.f_729), 0, -1987033526, 0); //case 0
-local local_H3_hack_2_p = 3862  -- (1.70 b3407) -- func_6732(&Local_3862, &(Local_1325.f_729), 0, -1987033526, 0); //case 1
-local local_H4_hack     = 24986 -- (1.70 b3407) -- func_6160(&Local_24986, &(Local_24977[func_395(bParam1, 3) /*2*/]), 0, joaat("heist"), Global_786547.f_1);
+local local_H3_hack_1       = 53087 -- (1.70 b3407) -- func_14773(&Local_53087, &(Local_53022[Local_31656[bLocal_3261 /*293*/].f_27 /*2*/]), 0, joaat("heist"), Global_786547.f_1);
+local local_H3_hack_2       = 54153 -- (1.70 b3407) -- func_14775(&Local_54153, &(Local_54088[Local_31656[bLocal_3261 /*293*/].f_27 /*2*/]), 0, joaat("heist"), Global_786547.f_1);
+local local_H3_hack_1_p     = 2861 -- (1.70 b3407) -- func_6778(&Local_2861, &(Local_1325.f_729), 0, -1987033526, 0); //case 0
+local local_H3_hack_2_p     = 3862 -- (1.70 b3407) -- func_6732(&Local_3862, &(Local_1325.f_729), 0, -1987033526, 0); //case 1
+local local_H4_hack         = 24986 -- (1.70 b3407) -- func_6160(&Local_24986, &(Local_24977[func_395(bParam1, 3) /*2*/]), 0, joaat("heist"), Global_786547.f_1);
 
 ---@param s script_util
 local function minigame_hack(s)
@@ -26,23 +26,23 @@ local function minigame_hack(s)
         locals.set_int("fm_mission_controller_2020", 1001 + 135, 3)    -- (1.70 b3407) Pass_Remote -- case 3: if (!func_20(&(Local_1001.f_85)))
         locals.set_int("fm_mission_controller_2020", 29810, 6)         -- (1.70 b3407) -- Perico drainage port grille cutting -- `switch (iLocal_29810) { case 0: ... else { HUD::DISPLAY_HELP_TEXT_THIS_FRAME("UT_WELD_PROMPT", true); }`
         locals.set_float("fm_mission_controller_2020", 31049 + 3, 100) -- (1.70 b3407) Perico plasma cutting // regex: if \(NETWORK::NETWORK_DOES_NETWORK_ID_EXIST\(Local.*?.f_1\)
-        locals.set_int("fm_mission_controller_2020", 1275, 2)           -- Insurance office task (Bottom Dollar Bail Office Mission)  GRAPHICS::DRAW_SPRITE("MPHotwire", "failed" // regex: if \(.?Local_.*? != 4\)
+        locals.set_int("fm_mission_controller_2020", 1275, 2)          -- Insurance office task (Bottom Dollar Bail Office Mission)  GRAPHICS::DRAW_SPRITE("MPHotwire", "failed" // regex: if \(.?Local_.*? != 4\)
         -- voltlab Complete immediately
         locals.set_int(
-            "fm_mission_controller_2020", 1744,                -- (1.70 b3407) // regex: .?Local_.*? = Global_.*?.f_.*?.f_10; (regex + match whole word)
-            locals.get_int("fm_mission_controller_2020", 1745) -- (1.70 b3407) -- Local_1744 +1 or regex search: if \(.?Local_.*? == .?Local_1744\)
-        )                                                      -- (1.70 b3407) -- voltlab The actual value and the target value are always consistent
-        locals.set_int("fm_mission_controller_2020", 1746, 3)  -- (1.70 b3407) Three lines have been connected -- Local_1745 +1 or regex search: if \(.?Local_.*? >= 2\)
+            "fm_mission_controller_2020", 1744,                                  -- (1.70 b3407) // regex: .?Local_.*? = Global_.*?.f_.*?.f_10; (regex + match whole word)
+            locals.get_int("fm_mission_controller_2020", 1745)                   -- (1.70 b3407) -- Local_1744 +1 or regex search: if \(.?Local_.*? == .?Local_1744\)
+        )                                                                        -- (1.70 b3407) -- voltlab The actual value and the target value are always consistent
+        locals.set_int("fm_mission_controller_2020", 1746, 3)                    -- (1.70 b3407) Three lines have been connected -- Local_1745 +1 or regex search: if \(.?Local_.*? >= 2\)
 
         if locals.get_int("fm_mission_controller_2020", 31024) == 3 then         -- Perico password box -- (1.70 b3407) -- if \(.?Local_.*?.f_.*?\[.*?\] == .*?Local_.*? && .?Local_.*? > 0\)
             locals.set_int("fm_mission_controller_2020", 31025, 2)               -- Three sets of passwords have been entered -- (1.70 b3407) case 3:
             locals.set_float("fm_mission_controller_2020", 31025 + 1 + 1,
-            locals.get_int("fm_mission_controller_2020", 31025 + 1 + 1 + 1))     -- (1.70 b3407) -- Make the password that has been input is the same as the goal
+                locals.get_int("fm_mission_controller_2020", 31025 + 1 + 1 + 1)) -- (1.70 b3407) -- Make the password that has been input is the same as the goal
             locals.set_float("fm_mission_controller_2020", 31025 + 1 + 1 + 2,
-            locals.get_int("fm_mission_controller_2020", 31025 + 1 + 1 + 1 + 2)) -- (1.70 b3407) -- Make the password that has been input is the same as the goal
+                locals.get_int("fm_mission_controller_2020", 31025 + 1 + 1 + 1 + 2)) -- (1.70 b3407) -- Make the password that has been input is the same as the goal
             locals.set_float("fm_mission_controller_2020", 31025 + 1 + 1 + 4,
-            locals.get_int("fm_mission_controller_2020", 31025 + 1 + 1 + 1 + 4)) -- (1.70 b3407) -- Make the password that has been input is the same as the goal
-            PAD.SET_CONTROL_VALUE_NEXT_FRAME(2, 237, 1.0)                         -- Confirm Password
+                locals.get_int("fm_mission_controller_2020", 31025 + 1 + 1 + 1 + 4)) -- (1.70 b3407) -- Make the password that has been input is the same as the goal
+            PAD.SET_CONTROL_VALUE_NEXT_FRAME(2, 237, 1.0)                        -- Confirm Password
         end
 
         local_H4_hack_v = locals.get_int("fm_mission_controller_2020", local_H4_hack) -- Perico finger clone
@@ -54,12 +54,12 @@ local function minigame_hack(s)
 
     if script.is_active("fm_mission_controller") then
         -- patch for WINIP -----
-        locals.set_int("fm_mission_controller", 163, 0) -- (1.70 b3407)
-        locals.set_int("fm_mission_controller", 164, 0) -- (1.70 b3407)
-        locals.set_int("fm_mission_controller", 179, 7) -- (1.70 b3407) // regex: if \(.?Local_.*? == 5 \|\| .?Local_.*? == 6\)
+        locals.set_int("fm_mission_controller", 163, 0)          -- (1.70 b3407)
+        locals.set_int("fm_mission_controller", 164, 0)          -- (1.70 b3407)
+        locals.set_int("fm_mission_controller", 179, 7)          -- (1.70 b3407) // regex: if \(.?Local_.*? == 5 \|\| .?Local_.*? == 6\)
         -------------------------
-        locals.set_int("fm_mission_controller", 1292 + 135, 3) -- (1.70 b3407) case 3 Pass_Remote // regex: if \(.?Local_.*?.f_135 != 5\)
-        locals.set_int("fm_mission_controller", 11812 + 24, 7) -- (1.70 b3407) CIRC_COMP // regex: if \(!.*?\(.?Local_.*?.f_280, 25\)\)
+        locals.set_int("fm_mission_controller", 1292 + 135, 3)   -- (1.70 b3407) case 3 Pass_Remote // regex: if \(.?Local_.*?.f_135 != 5\)
+        locals.set_int("fm_mission_controller", 11812 + 24, 7)   -- (1.70 b3407) CIRC_COMP // regex: if \(!.*?\(.?Local_.*?.f_280, 25\)\)
         -- Automatic drilling
         locals.set_float("fm_mission_controller", 10103 + 11, 1) -- (1.70 b3407) Bank drilling  case 0: // regex: if \(.?Local_.*?.f_3 == -1\) // .?Local_.*?.f_3 = AUDIO::GET_SOUND_ID();
         locals.set_int("fm_mission_controller", 10143 + 2, 8)    -- (1.70 b3407) Casino vault door drilling DLC_HEIST3\HEIST_FINALE_LASER_DRILL case 8 // regex: else if \(.?Local_.*?\.f_7 == .*?Local_.*?\.f_37\)
@@ -106,7 +106,7 @@ local function minigame_hack(s)
     if script.is_active("fm_content_island_heist") then
         locals.set_int("fm_content_island_heist", 787, locals.get_int("fm_content_island_heist", 767)) -- (1.70 b3407) // regex: regex: AUDIO::PLAY_SOUND_FRONTEND\(-1, "All_Connected_Correct", .*?Param1->f_...?, true\); -- voltlab The actual value and the target value are always consistent
         locals.set_int("fm_content_island_heist", 789, 3)                                              -- (1.70 b3407)  Three lines have been connected // regex: if \(func_.*?() && .*?Local_...? > 0\)
-        locals.set_int("fm_content_island_heist", 10162 + 24, 7) -- (1.70 b3407) // regex: .?Local_1....?\.f_....? = .?Local_...?;
+        locals.set_int("fm_content_island_heist", 10162 + 24, 7)                                       -- (1.70 b3407) // regex: .?Local_1....?\.f_....? = .?Local_...?;
     end
 
     if script.is_active("fm_content_vehrob_prep") then
@@ -225,7 +225,8 @@ mgh_tab:add_imgui(function()
             end)
         end
         if ImGui.IsItemHovered() then
-            ImGui.SetTooltip(string.format("TIP: You can also press %s to use Minigame Hack without opening the menu.", minigame_button.name))
+            ImGui.SetTooltip(string.format("TIP: You can also press %s to use Minigame Hack without opening the menu.",
+            minigame_button.name))
         end
     else
         ImGui.Text("Minigame Hack is outdated.")
