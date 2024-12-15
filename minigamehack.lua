@@ -9,7 +9,7 @@ local function GetBuildNumber()
     return pBnum:get_string()
 end
 
-local TARGET_BUILD <const>  = "3407"
+local TARGET_BUILD <const>  = "3411"
 local CURRENT_BUILD <const> = GetBuildNumber()
 
 local local_H3_hack_1       = 53087 -- (1.70 b3407) -- func_14773(&Local_53087, &(Local_53022[Local_31656[bLocal_3261 /*293*/].f_27 /*2*/]), 0, joaat("heist"), Global_786547.f_1);
