@@ -4,7 +4,7 @@ Minigame instant complete, skip hacking process.
 
 ## Support Scope
 
-- **Hacking Process:** VoltLab, Finger clone, Finger scanner, Bruteforce, Hotwire, BeamHack, Hackconnect, Data Crack, snake game, Perico safe, stash house safe \
+- **Hacking Process:** VoltLab, Finger clone, Finger scanner, Bruteforce, Hotwire, BeamHack, Hackconnect, Data Crack, snake game, Perico safe, stash house safe, circuit block, word hack \
 - **Others:** Perico plasma cutting, Perico drainage grille cutting, Casino heist double doors, Fleeca & Casino heist instant drill.
 
 ## Button Location

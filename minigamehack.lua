@@ -129,6 +129,32 @@ local function minigame_hack(s)
         locals.set_int("fm_content_business_battles", 4173 + 24, 7) -- (1.70 b3407) // regex: .?Local_....?\.f_...? = .?Local_....?\.f_...?;
     end
 
+    --mp2024_02 DLC mission1_The_Black_Box_File
+    if script.is_active("am_mp_hotwire") then
+        locals.set_int("am_mp_hotwire", 298, 2) --(1.70 b3411) GRAPHICS::DRAW_SPRITE("MPHotwire", "failed"
+    end
+
+    --mp2024_02 DLC mission2_The_Brute_Force_File (also for mission4_The_Project_Breakaway_File_final)
+    if script.is_active("word_hack") then 
+        locals.set_int("word_hack", 49 + 53, 5) --(1.70 b3411) "MPWordHack_Sprites", "WM_Popup_Complete"  --func_1(&uScriptParam_0, &Global_1981119, &iLocal_49, &uLocal_106); &iLocal_49 - switch (iParam1->f_53) - case 5
+    end
+
+    --mp2024_02 DLC mission3_The_Fine_Art_File
+    if script.is_active("circuitblockhack") then
+        locals.set_int("circuitblockhack", 49 + 9, 2) --(1.70 b3411) AUDIO::PLAY_SOUND_FRONTEND(-1, "Success", "DLC_24-2_Hack_Circuit_Board", true);
+    end
+    if script.is_active("fm_content_hacker_house_finale") then --fingerprint clone
+        locals.set_int("fm_content_hacker_house_finale", 5951 + 1, 5) --(1.70 b3411) func_8654(uParam0, iParam1, 0, joaat("practice"), func_447(9572, -1)); --func_8663(iParam1, uParam0, 8000, "FingerPrint_Success");
+    end
+
+    --mp2024_02 DLC mission4_The_Project_Breakaway_File
+    local_mp2024_02_m4 = 5097 -- (1.70 b3411) -- func_9013(&Local_5097, 5, 5, 10, 10, 8, 10, 0, 0, 0, 1, 1, 0, 0, 60000, 1, 1, 0, 0, bVar0, -1); --HUD::HIDE_SCRIPTED_HUD_COMPONENT_THIS_FRAME(19); --AUDIO::PLAY_SOUND_FRONTEND(-1, "Hack_Success", "DLC_HEIST_BIOLAB_PREP_HACKING_SOUNDS", true);
+    local_mp2024_02_m4_v = locals.get_int("fm_content_hacker_whistle_prep", local_mp2024_02_m4)
+    if (local_mp2024_02_m4_v & (1 << 26)) == 0 then
+        local_mp2024_02_m4_v = local_mp2024_02_m4_v ~ (1 << 26)
+        locals.set_int("fm_content_hacker_whistle_prep", local_mp2024_02_m4, local_mp2024_02_m4_v)
+    end
+
     -- int* iParam0, int iParam1, int iParam2, int iParam3, int iParam4, var uParam5, var uParam6, int iParam7, bool bParam8, bool bParam9, bool bParam10, bool bParam11, bool bParam12, bool bParam13, int iParam14, int iParam15, bool bParam16, bool bParam17, bool bParam18, bool bParam19, bool bParam20, bool bParam21
     local minigamelocaltable = {
         [1]  = { script_name = "agency_heist3b", minigame_local = 6210 },       -- (1.70 b3407) -- case 4: if (CUTSCENE::CAN_SET_EXIT_STATE_FOR_REGISTERED_ENTITY("Michael", 0))
